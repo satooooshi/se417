@@ -5,18 +5,15 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
-import java.util.Queue;
+import java.util.*;
+import java.lang.String;
+
 
 public class Lexicon {
 
     Set<String> dict = new HashSet<>();
-    String start;
-    String end;
 
-    public Lexicon(String filename, String start, String end){
+    public Lexicon(String filename){
         try{
             File file = new File(filename);
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -29,8 +26,6 @@ public class Lexicon {
                 dict.add(str);
             }
 
-            System.out.println("Success!");
-
             br.close();
         }catch(FileNotFoundException e){
             System.out.println(e);
@@ -39,7 +34,5 @@ public class Lexicon {
         }
     }
 
-    public boolean findNextWord(){return false;}
-
-
 }
+
