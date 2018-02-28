@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="se417:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/se417_jar</output-path>
+    <root id="archive" name="se417.jar">
+      <element id="module-output" name="se417" />
+    </root>
+  </artifact>
+</component>
