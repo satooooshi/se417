@@ -13,7 +13,7 @@ public class Main {
         s.findLadders("apple","elite",l.dict);
 */
         Lexicon l=new Lexicon("dictionary.txt");
-        WordLadder w = new WordLadder("wound","women",l.dict);
+        WordLadder w = new WordLadder("date","data",l.dict);
     }
 }
 

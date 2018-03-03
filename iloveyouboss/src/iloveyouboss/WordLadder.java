@@ -57,7 +57,6 @@ public class WordLadder {
                     //"valid" English word
                     if(!this.dict.contains(newWord))
                         continue;
-                    System.out.println(newWord);
                     //
                     //If that neighbor word has not already been
                     //used in a ladder before:
@@ -75,7 +74,7 @@ public class WordLadder {
                         //Create a copy of the current partial-
                         //ladder stack.
                         }else{
-                             Stack<String> copy_child=temp_child;
+                             Stack<String> copy_child = (Stack<String>)temp_child.clone();
                              //
                              //Put the neighbor word on top of the copied stack
                              copy_child.push(newWord);
