@@ -19,6 +19,7 @@ public class WordLadder {
     String start;
     String end;
     Set<String>dict;
+    Set<String>foundLadder;
 
     public WordLadder(String start, String end, Set<String>dict){
         this.start=start;
@@ -67,7 +68,8 @@ public class WordLadder {
                              temp_child.push(newWord);
                              while (!temp_child.isEmpty())
                              {
-                                 System.out.println("/"+temp_child.pop());
+                                 //System.out.println("/"+temp_child.pop());
+                                 foundLadder.add(temp_child.pop());
                              }
                              return;//FOUND!!
                         //
@@ -87,6 +89,10 @@ public class WordLadder {
             arr[i]=temp;
             }
         }
+    }
+
+    public Set<String>getFoundLadder(){
+        return foundLadder;
     }
 
 }
