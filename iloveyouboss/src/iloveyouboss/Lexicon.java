@@ -11,7 +11,7 @@ package iloveyouboss;
 
 public class Lexicon {
 
-    Set<String> dict = new HashSet<>();
+    private Set<String> dict = new HashSet<>();
 
     public Lexicon(String filename){
         try{
@@ -32,6 +32,14 @@ public class Lexicon {
         }catch(IOException e){
             System.out.println(e);
         }
+    }
+
+    public void addNewWord(String word){
+        dict.add(word);
+    }
+
+    public Set<String>getDictionary(){
+        return dict;
     }
 
 }
