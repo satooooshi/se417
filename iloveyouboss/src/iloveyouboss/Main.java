@@ -3,17 +3,19 @@ package iloveyouboss;
 public class Main {
 
     public static void main(String[] args){
-/*
-        Queprac q= new Queprac();
-        q.show();
 
+        //Arrange
         Lexicon l=new Lexicon("dictionary.txt");
+        ProcessUserInput p=new ProcessUserInput();
+        String start=p.inputStartAs("oOld");
+        String end=p.inputEndAs("WarM");
+        l.addNewWord(start);
+        l.addNewWord(end);
 
-        Solution s=new Solution();
-        s.findLadders("apple","elite",l.dict);
-*/
-        Lexicon l=new Lexicon("dictionary.txt");
-        WordLadder w = new WordLadder("date","data",l.dict);
+        //Act
+        WordLadder w = new WordLadder(start,end,l.getDictionary());
+
+        //Assert
     }
 }
 
