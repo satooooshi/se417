@@ -19,7 +19,7 @@ public class WordLadder {
     String start;
     String end;
     Set<String>dict;
-    Set<String>foundLadder;
+    Stack<String>foundLadder;
 
     public WordLadder(String start, String end, Set<String>dict){
         this.start=start;
@@ -66,11 +66,12 @@ public class WordLadder {
                         //If the neighbor word is w2:
                         if (newWord.equals(this.end)){
                              temp_child.push(newWord);
-                             while (!temp_child.isEmpty())
-                             {
-                                 //System.out.println("/"+temp_child.pop());
-                                 foundLadder.add(temp_child.pop());
-                             }
+                             //while (!temp_child.isEmpty())
+                             //{
+                             //    System.out.println("/"+temp_child.pop());
+
+                             //}
+                              foundLadder=(Stack<String>)temp_child.clone();
                              return;//FOUND!!
                         //
                         //Create a copy of the current partial-
@@ -91,7 +92,7 @@ public class WordLadder {
         }
     }
 
-    public Set<String>getFoundLadder(){
+    public Stack<String>getFoundLadder(){
         return foundLadder;
     }
 

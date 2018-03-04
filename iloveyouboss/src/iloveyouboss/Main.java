@@ -1,5 +1,6 @@
 package iloveyouboss;
 
+
 public class Main {
 
     public static void main(String[] args){
@@ -7,15 +8,15 @@ public class Main {
         //Arrange
         Lexicon l=new Lexicon("dictionary.txt");
         ProcessUserInput p=new ProcessUserInput();
-        String start=p.inputStartAs("oOld");
-        String end=p.inputEndAs("WarM");
+        String start=p.inputStartAs("MArty");
+        String end=p.inputEndAs("curLs");
         l.addNewWord(start);
         l.addNewWord(end);
 
         //Act
         WordLadder w = new WordLadder(start,end,l.getDictionary());
 
-        //Assert
+        System.out.println(w.getFoundLadder().size());
     }
 }
 
