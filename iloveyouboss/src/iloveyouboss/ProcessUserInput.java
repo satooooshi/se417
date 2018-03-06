@@ -22,7 +22,7 @@ public class ProcessUserInput {
 
     public ProcessUserInput(String start, String end, String dictName) {
 
-        try {
+        //try {
             //Scanner reader = new Scanner(System.in);  // Reading from System.in
 
             //System.out.println("Dictionary file name? ");
@@ -32,16 +32,7 @@ public class ProcessUserInput {
             this.end=toLower(end);
             this.dictName=dictName;
 
-
-            if(!legitimateWord()){
-                throw new EndWordsLengthDoseNotMatchException("ErrorGeneratedInProcessUserInput");
-            }
-
-
-
-        } catch (EndWordsLengthDoseNotMatchException e) {
-            System.out.println(e);
-        }
+            legitimateWord();
 
     }
 
@@ -58,30 +49,29 @@ public class ProcessUserInput {
     public String showStartName(){
         return this.start;
     }
-    public String showEndtName(){
+    public String showEndName(){
         return this.end;
     }
 
 
-    public boolean legitimateWord(){
+    public void legitimateWord(){
 
 
             if (this.start.isEmpty() ||
                     this.end.isEmpty() ||
                     this.dictName.isEmpty()) {
-                return false;
+                throw new  EndWordsLengthDoseNotMatchException("Have a Nice day.");
             }
 
             if (this.start.length() != this.end.length()) {
-                return false;
+                throw new  EndWordsLengthDoseNotMatchException("Have a Nice day.");
             }
             char[] temp = this.start.toCharArray();
             for (int i = 0; i < temp.length; ++i) {
                 if (!(temp[i] >= 'a' && temp[i] <= 'z')) {
-                    return false;
+                    throw new  EndWordsLengthDoseNotMatchException("Have a Nice day.");
                 }
             }
-            return true;
 
     }
 

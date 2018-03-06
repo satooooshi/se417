@@ -11,7 +11,7 @@ public class Main {
 
         ProcessUserInput p=new ProcessUserInput("apple","elite","dictionary.txt");
         Lexicon l=new Lexicon(p.showDictName());
-        WordLadder w=new WordLadder(p.showStartName(),p.showEndtName(),l.getDictionary());
+        WordLadder w=new WordLadder(p.showStartName(),p.showEndName(),l.getDictionary());
         Stack<String>ladder=(Stack<String>) w.getFoundLadder().clone();
         while(!ladder.empty()){
             System.out.println(ladder.pop());
