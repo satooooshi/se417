@@ -1,20 +1,90 @@
 package iloveyouboss;
 
+import java.io.*;
 import java.lang.String;
+import java.util.Scanner;
+
+
+class EndWordsLengthDoseNotMatchException extends RuntimeException {
+    public EndWordsLengthDoseNotMatchException(String message) {
+        super(message);
+    }
+
+}
 
 public class ProcessUserInput {
+
+    private String dictName;
     private String start;
     private String end;
 
-    public String inputStartAs(String start){
-        this.start=start.toLowerCase();
-        return this.start;
+
+
+    public ProcessUserInput(String start, String end, String dictName) {
+
+        try {
+            //Scanner reader = new Scanner(System.in);  // Reading from System.in
+
+            //System.out.println("Dictionary file name? ");
+            //word = reader.nextLine();
+
+            this.start=toLower(start);
+            this.end=toLower(end);
+            this.dictName=dictName;
+
+
+            if(!legitimateWord()){
+                throw new EndWordsLengthDoseNotMatchException("ErrorGeneratedInProcessUserInput");
+            }
+
+
+
+        } catch (EndWordsLengthDoseNotMatchException e) {
+            System.out.println(e);
+        }
+
     }
 
-    public String inputEndAs(String end){
-        this.end=end.toLowerCase();
+    public String toLower(String word){
+        if(!word.isEmpty())
+            return word.toLowerCase();
+        else
+            return word;
+    }
+
+    public String showDictName(){
+        return this.dictName;
+    }
+    public String showStartName(){
+        return this.start;
+    }
+    public String showEndtName(){
         return this.end;
     }
+
+
+    public boolean legitimateWord(){
+
+
+            if (this.start.isEmpty() ||
+                    this.end.isEmpty() ||
+                    this.dictName.isEmpty()) {
+                return false;
+            }
+
+            if (this.start.length() != this.end.length()) {
+                return false;
+            }
+            char[] temp = this.start.toCharArray();
+            for (int i = 0; i < temp.length; ++i) {
+                if (!(temp[i] >= 'a' && temp[i] <= 'z')) {
+                    return false;
+                }
+            }
+            return true;
+
+    }
+
 
 
 }

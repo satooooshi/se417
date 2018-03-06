@@ -1,23 +1,24 @@
 package iloveyouboss;
 
 
+import java.util.Scanner;
+import java.util.Stack;
+
+
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        //Arrange
-        Lexicon l=new Lexicon("dictionary.txt");
-        ProcessUserInput p=new ProcessUserInput();
-        String start=p.inputStartAs("MArty");
-        String end=p.inputEndAs("curLs");
-        l.addNewWord(start);
-        l.addNewWord(end);
-
-        //Act
-        WordLadder w = new WordLadder(start,end,l.getDictionary());
-
-        System.out.println(w.getFoundLadder().size());
+        ProcessUserInput p=new ProcessUserInput("apple","elite","dictionary.txt");
+        Lexicon l=new Lexicon(p.showDictName());
+        WordLadder w=new WordLadder(p.showStartName(),p.showEndtName(),l.getDictionary());
+        Stack<String>ladder=(Stack<String>) w.getFoundLadder().clone();
+        while(!ladder.empty()){
+            System.out.println(ladder.pop());
+        }
     }
+
 }
+
 
 

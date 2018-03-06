@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.*;
 
 public class WordLadderTest {
-
+/*
     private Lexicon l;
     private ProcessUserInput p;
     private WordLadder w;
@@ -55,7 +55,7 @@ public class WordLadderTest {
 
 
 
-
+*/
 }
 
 //givenSomeContextWhenDoingSomeBehaviorThenSomeResultOccurs
