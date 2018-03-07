@@ -24,13 +24,13 @@ public class WordLadderTest {
     //
     //ThenSomeResultOccur
     @Test
-    public void GenerateLadderWhenFound(){
+    public void GeneratesLadderWhenFound(){
         assertThat(w.getFoundLadder(),
                 equalTo(Arrays.asList(new String[] {"data","date","cate","cade","code"})));
     }
 
     @Test
-    public void GenerateOneOfMinimumLengthLadder(){
+    public void GeneratesOneOfMinimumLengthLadder(){
         w=new WordLadder("code","data",l.getDictionary());
         assertThat(w.getFoundLadder().size(), equalTo(5));
 

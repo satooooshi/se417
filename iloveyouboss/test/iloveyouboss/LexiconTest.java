@@ -9,12 +9,12 @@ public class LexiconTest {
 
 
     @Test
-    public void createLexiconFromNonExistFileThrowsFileNotFoundException() throws FileNotFoundException{
+    public void InitializeLexiconWithmNonExistFileThrowsFileNotFoundException() throws FileNotFoundException{
         Lexicon l = new Lexicon("nonexist.txt");
     }
 
     @Test
-    public void addNewWordToLexicon()throws FileNotFoundException {
+    public void addsNewWordToLexicon()throws FileNotFoundException {
         //arrange
         Lexicon l = new Lexicon("dictionary.txt");
         //act
