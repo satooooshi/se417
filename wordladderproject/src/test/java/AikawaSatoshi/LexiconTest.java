@@ -1,9 +1,10 @@
-package iloveyouboss;
+package AikawaSatoshi;
 
 import org.junit.*;
 import java.io.FileNotFoundException;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+
 
 public class LexiconTest {
 
