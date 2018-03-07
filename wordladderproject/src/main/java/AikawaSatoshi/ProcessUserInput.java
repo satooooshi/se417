@@ -57,7 +57,7 @@ public class ProcessUserInput {
     public void legitimateWord(){
 
 
-            if (this.start.length() && this.end.length && this.dictName.length) {
+            if (this.start.isEmpty() || this.end.isEmpty() || this.dictName.isEmpty()) {
                 throw new  EndWordsLengthDoseNotMatchException("Have a Nice day.");
             }
 

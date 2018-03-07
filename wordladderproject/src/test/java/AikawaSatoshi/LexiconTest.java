@@ -10,7 +10,7 @@ public class LexiconTest {
 
 
     @Test
-    public void InitializeLexiconWithmNonExistFileThrowsFileNotFoundException() throws FileNotFoundException{
+    public void InitializeLexiconWithNonExistFileThrowsFileNotFoundException() throws FileNotFoundException{
         Lexicon l = new Lexicon("nonexist.txt");
     }
 
