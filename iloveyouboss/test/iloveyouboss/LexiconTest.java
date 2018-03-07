@@ -1,9 +1,7 @@
 package iloveyouboss;
 
 import org.junit.*;
-
 import java.io.FileNotFoundException;
-
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -11,7 +9,7 @@ public class LexiconTest {
 
 
     @Test
-    public void createLexiconFromNonExistFilePutsError()throws FileNotFoundException{
+    public void createLexiconFromNonExistFileThrowsFileNotFoundException() throws FileNotFoundException{
         Lexicon l = new Lexicon("nonexist.txt");
     }
 
@@ -20,7 +18,7 @@ public class LexiconTest {
         //arrange
         Lexicon l = new Lexicon("dictionary.txt");
         //act
-        l.addNewWord("neword");
+        l.addNewWord("newword");
         //assert
         assertTrue(l.getDictionary().contains("newword"));
     }

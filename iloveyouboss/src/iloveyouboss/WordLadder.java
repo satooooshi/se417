@@ -92,8 +92,12 @@ public class WordLadder {
         }
     }
 
-    public Stack<String>getFoundLadder(){
-        return foundLadder;
+    public ArrayList<String>getFoundLadder(){
+        ArrayList<String> ladder = new ArrayList<String>();
+        while(!foundLadder.empty()){
+            ladder.add(foundLadder.pop());
+        }
+        return ladder;
     }
 
 }
