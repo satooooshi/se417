@@ -28,9 +28,9 @@ public class Lexicon {
 
             br.close();
         }catch(FileNotFoundException e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }catch(IOException e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
 
         }
     }

@@ -35,7 +35,6 @@ public class WordLadderTest {
 
     @Test
     public void GeneratesOneOfMinimumLengthLadder(){
-        w=new WordLadder("code","data",l.getDictionary());
         assertThat(w.getFoundLadder().size(), equalTo(5));
 
     }

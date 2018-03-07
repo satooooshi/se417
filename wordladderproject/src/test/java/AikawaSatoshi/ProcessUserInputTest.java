@@ -24,7 +24,7 @@ public class ProcessUserInputTest {
         ProcessUserInput p=new ProcessUserInput("Hell0","ap23__","dictionary.txt");
     }
 
-    @Test(expected = EndWordsLengthDoseNotMatchException.class)
+    @Test(expected = EnterInputted.class)
     public void throwsWhenEnterThenOutputHaveANiceDay(){
         ProcessUserInput p=new ProcessUserInput("","ap23__","dictionary.txt");
     }
@@ -32,6 +32,11 @@ public class ProcessUserInputTest {
     @Test(expected = EndWordsLengthDoseNotMatchException.class)
     public void throwsWhenInputEndWordsWithDifferentLength(){
         ProcessUserInput p=new ProcessUserInput("Hello","gentleman","dictionary.txt");
+    }
+
+    @Test(expected = EndWordsLengthDoseNotMatchException.class)
+    public void throwsWhenInputIdenticalEndWords(){
+        ProcessUserInput p=new ProcessUserInput("apple","Apple","dictionary.txt");
     }
 
 }

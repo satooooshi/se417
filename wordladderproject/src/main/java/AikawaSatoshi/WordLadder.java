@@ -43,7 +43,6 @@ public class WordLadder {
             //of the queue.
             Stack<String>temp_child=children.poll();
             String topWord=temp_child.peek();
-
             //
             //For each valid English word
             char[] arr = topWord.toCharArray();
@@ -62,6 +61,12 @@ public class WordLadder {
                     //If that neighbor word has not already been
                     //used in a ladder before:
                     if(!temp_child.contains(newWord)) {
+
+                        //
+                        //delete generatedWord
+                        dict.remove(newWord);
+
+
                         //
                         //If the neighbor word is w2:
                         if (newWord.equals(this.end)){
