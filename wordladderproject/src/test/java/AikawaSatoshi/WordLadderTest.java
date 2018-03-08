@@ -18,7 +18,6 @@ public class WordLadderTest {
     @Before
     public void initializeWordLadderGeneratorWithValidLexicon(){
         l=new Lexicon("dictionary.txt");
-        w=new WordLadder("code","data",l.getDictionary());
     }
 
     //
@@ -29,13 +28,21 @@ public class WordLadderTest {
     //ThenSomeResultOccur
     @Test
     public void GeneratesLadderWhenFound(){
+        w=new WordLadder("code","data",l.getDictionary());
         assertThat(w.getFoundLadder(),
                 equalTo(Arrays.asList(new String[] {"data","date","cate","cade","code"})));
     }
 
     @Test
-    public void GeneratesOneOfMinimumLengthLadder(){
+    public void GeneratesOneOfMinimumLengthLadderWhenFound(){
+        w=new WordLadder("code","data",l.getDictionary());
         assertThat(w.getFoundLadder().size(), equalTo(5));
+
+    }
+    @Test
+    public void GenerateNothingWhenNoLadderFound(){
+        w=new WordLadder("enable","ladder",l.getDictionary());
+        assertNull( w.getFoundLadder());
 
     }
 }
