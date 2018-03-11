@@ -99,10 +99,14 @@ public class WordLadder {
 
     public ArrayList<String>getFoundLadder(){
         ArrayList<String> ladder = new ArrayList<String>();
-        while(!(foundLadder.empty()){
-            ladder.add(foundLadder.pop());
+        if(!(foundLadder==null)) {
+            while (!foundLadder.empty()) {
+                ladder.add(foundLadder.pop());
+            }
+            return ladder;
+        }else{
+            return null;
         }
-        return ladder;
     }
 
 }
